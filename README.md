@@ -1,3 +1,66 @@
+# Leasing Application Backend Test
+
+**Duration:** ~4-8 hours
+
+**Objective:** Build a backend API to support a multi-step leasing application form.
+
+## Tech Stack
+- **Python**
+- **Django** (Django Rest Framework for API)
+- **Celery** (for asynchronous tasks)
+- **PostgreSQL** (or SQLite for simplicity)
+- **Docker** for containerization (optional)
+
+## API Endpoints
+
+### User Management
+- **`/api/users/register/` (POST):** Register a new user.  
+  Fields: username, email, password.
+
+- **`/api/users/login/` (POST):** User login.  
+  Fields: email, password.
+
+- **`/api/users/profile/` (GET):** Retrieve user's profile details.
+
+### Leasing Application
+- **`/api/leasing/countries/` (GET):** Fetch list of countries.
+
+- **`/api/leasing/models/` (GET):** Fetch product models based on the product type.
+
+- **`/api/leasing/applications/` (POST):** Submit a new leasing application.
+
+- **`/api/leasing/applications/{id}/` (GET, PUT, DELETE):** Manage existing application.
+
+### File Management
+- **`/api/files/upload/` (POST):** Upload documents.
+
+- **`/api/files/{id}/` (GET, DELETE):** Manage uploaded documents.
+
+## Celery Task
+
+- **Send Confirmation Email:** Trigger a Celery task to send a confirmation email upon successful application submission.
+
+## Features & Expectations
+
+- JWT Authentication for secure endpoints.
+- Use Django Rest Framework for API development.
+- Perform validation on all data received from endpoints.
+- Implement error handling and return appropriate HTTP status codes and messages.
+- Use database transactions for application submissions to ensure data integrity.
+- Asynchronous email sending with Celery.
+- Dockerfile and docker-compose setup for easy deployment (optional).
+
+## Evaluation Criteria
+
+- Proper use of Django and Django Rest Framework features.
+- Database design and query optimization.
+- Celery configuration and task management.
+- Code Structure and Python Best Practices.
+- Security measures (e.g., authentication, input validation).
+- Error handling and user-friendly messages.
+- Documentation of API endpoints and how to run the project.
+
+
 **React + TypeScript Test Project: Leasing Application Form**  
 **Duration:** ~4-8 hours  
 **Objective:** Build a multi-step leasing application form using React Hook Form. This form will be used by customers to apply for leasing products (e.g., cars, apartments, equipment).
